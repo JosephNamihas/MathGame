@@ -1,17 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.ComponentModel.Design;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
+
 
 Random rnd = new Random();
 int numberOne;
 int numberTwo;
+double answer = 0;
 
-string? playerAnswer;
 string? operationChoice;
 
 StartQuiz();
-CalculateAnswer(GenerateQuestion(operationChoice), playerAnswer);
+GenerateQuestion(operationChoice);
+Console.WriteLine(CompareAnswers(answer));
+
+
 
 
 bool IsValidOperation(string? choice)
@@ -45,59 +46,56 @@ return operationChoice; // while isValidOperation return false, keep running isV
 
 }
 
-double GenerateQuestion(string operation) {
+string GenerateQuestion(string operation) {
 
     numberOne = rnd.Next(0, 12);
     numberTwo = rnd.Next(0, 12);
-    double answer;
-    string tempAnswer;
+    string question;
     switch (operation)
     {
         case "+":
             Console.WriteLine("You chose addition.");
-            Console.WriteLine($"What is {numberOne} + {numberTwo}?");
+            Console.WriteLine($"What is {numberOne} + {numberTwo}");
+            question = $"What is {numberOne} + {numberTwo}?";
             answer = numberOne + numberTwo;
-            return answer;
+
+            return question;
 
         case "-":
             Console.WriteLine("You chose subtraction.");
-            Console.WriteLine($"What is {numberOne} - {numberTwo}?");
+            question = $"What is {numberOne} - {numberTwo}?";
             answer = numberOne - numberTwo;
-            playerAnswer = Console.ReadLine();
-            double.Parse(playerAnswer);
-            return answer;
+            return question;
 
         case "*":
             Console.WriteLine("You chose multiplication.");
-            Console.WriteLine($"What is {numberOne} * {numberTwo}?");
+            question = $"What is {numberOne} * {numberTwo}?";
             answer = numberOne * numberTwo;
-            playerAnswer = Console.ReadLine();
-            double.Parse(playerAnswer);
-            return answer;
+            return question;
 
         case "/":
             Console.WriteLine("You chose division.");
-            Console.WriteLine($"What is {numberOne} / {numberTwo}?");
+            question = $"What is {numberOne} / {numberTwo}?";
             answer = numberOne / numberTwo;
-            playerAnswer = Console.ReadLine();
-            double.Parse(playerAnswer);
-            return answer;
+            return question;
 
         default:
             Console.WriteLine("Unexpected operation.");
-            return 0;
+            return "Please restart quiz";
     }
 }
 
-void CalculateAnswer(double answer, double playerAnswer) {
-    if (answer == playerAnswer) {
-        Console.WriteLine("Correct!");
-        StartQuiz();
+bool CompareAnswers(double answer) {
+    string answerPrompt = Console.ReadLine();
+    double playerAnswer = double.Parse(answerPrompt);
+
+    if(answer == playerAnswer) {
+        return true;
     } else {
-        Console.WriteLine("Incorrect!");
-        StartQuiz();
+        return false;
     }
 
 }
+
 
 
