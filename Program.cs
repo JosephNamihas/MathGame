@@ -3,57 +3,101 @@ using System.ComponentModel.Design;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 
-Console.WriteLine("Hello, World!");
+Random rnd = new Random();
+int numberOne;
+int numberTwo;
+
+string? playerAnswer;
 string? operationChoice;
 
-do
-{
-    Console.WriteLine("Enter a mathematical operation (+, -, *, /):");
-    operationChoice = Console.ReadLine();
+StartQuiz();
+CalculateAnswer(GenerateQuestion(operationChoice), playerAnswer);
 
-} while (!IsValidOperation(operationChoice));
-
-ChooseOperation(operationChoice!);
 
 bool IsValidOperation(string? choice)
 {
     if (string.IsNullOrWhiteSpace(choice))
     {
         Console.WriteLine("You need to enter a mathematical operation. It can't be empty!");
-        return false;
-    }
-
-    if (choice != "+" && choice != "-" && choice != "*" && choice != "/")
+        return false; // Checks for whitespace / empty strings
+    } 
+    
+    else if (choice != "+" && choice != "-" && choice != "*" && choice != "/") // If choice isn't any of the mathematical operators
     {
         Console.WriteLine("You need to enter a valid operator (+, -, /, *).");
-        return false;
-    }
+        return false; // Checks for correct characters
+    } 
 
-    return true;
+    else {
+        return true;
+    }
 }
 
-void ChooseOperation(string operation) {
+string StartQuiz() {
+    do
+{
+    Console.WriteLine("Enter a mathematical operation (+, -, *, /):");
+    operationChoice = Console.ReadLine();
+
+} while (!IsValidOperation(operationChoice));
+
+return operationChoice; // while isValidOperation return false, keep running isValidOperation with the operation choice parameter. 
+
+}
+
+double GenerateQuestion(string operation) {
+
+    numberOne = rnd.Next(0, 12);
+    numberTwo = rnd.Next(0, 12);
+    double answer;
+    string tempAnswer;
     switch (operation)
     {
         case "+":
             Console.WriteLine("You chose addition.");
-            break;
+            Console.WriteLine($"What is {numberOne} + {numberTwo}?");
+            answer = numberOne + numberTwo;
+            return answer;
 
         case "-":
             Console.WriteLine("You chose subtraction.");
-            break;
+            Console.WriteLine($"What is {numberOne} - {numberTwo}?");
+            answer = numberOne - numberTwo;
+            playerAnswer = Console.ReadLine();
+            double.Parse(playerAnswer);
+            return answer;
 
         case "*":
             Console.WriteLine("You chose multiplication.");
-            break;
+            Console.WriteLine($"What is {numberOne} * {numberTwo}?");
+            answer = numberOne * numberTwo;
+            playerAnswer = Console.ReadLine();
+            double.Parse(playerAnswer);
+            return answer;
 
         case "/":
             Console.WriteLine("You chose division.");
-            break;
+            Console.WriteLine($"What is {numberOne} / {numberTwo}?");
+            answer = numberOne / numberTwo;
+            playerAnswer = Console.ReadLine();
+            double.Parse(playerAnswer);
+            return answer;
 
         default:
             Console.WriteLine("Unexpected operation.");
-            break;
+            return 0;
     }
 }
+
+void CalculateAnswer(double answer, double playerAnswer) {
+    if (answer == playerAnswer) {
+        Console.WriteLine("Correct!");
+        StartQuiz();
+    } else {
+        Console.WriteLine("Incorrect!");
+        StartQuiz();
+    }
+
+}
+
 

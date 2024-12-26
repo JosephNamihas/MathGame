@@ -7,3 +7,10 @@ The divisions should result on INTEGERS ONLY and dividends should go from 0 to 1
 Users should be presented with a menu to choose an operation
 You should record previous games in a List and there should be an option in the menu for the user to visualize a history of previous games.
 You don't need to record results on a database. Once the program is closed the results will be deleted.
+
+
+
+
+
+Key Questions:
+
