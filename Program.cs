@@ -19,7 +19,6 @@ void GameFlow() {
     Console.WriteLine($"{CompareAnswers(answer)}! Your score is {score}");
 
     ViewQuestionList();
-
 }
 
 bool IsValidOperation(string? choice)
@@ -106,7 +105,6 @@ bool CompareAnswers(double answer) {
     } else {
         return false;
     }
-
 }
 
 void ViewQuestionList() {
