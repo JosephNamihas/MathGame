@@ -81,12 +81,8 @@ string GenerateQuestion(string operation) {
             return question;
 
         case "/":
-        // Question must result in a modulus of 0;
-            Console.WriteLine("You chose division.");
-            Console.WriteLine($"What is {numberOne} / {numberTwo}?");
-            question = $"What is {numberOne} / {numberTwo}?";
-            answer = numberOne / numberTwo;
-            return question;
+        Console.WriteLine("You chose division");
+            return DivisionLogic(numberOne, numberTwo);
 
         default:
             Console.WriteLine("Unexpected operation.");
@@ -135,5 +131,19 @@ void QuestionList() {
         Console.WriteLine($"{item}\n");
     }
 }
+
+string DivisionLogic(int numberOne, int numberTwo) {
+
+    do {
+        numberOne = rnd.Next(1, 12);
+        numberTwo = rnd.Next(1, 12);
+
+    } while (numberOne % numberTwo != 0); 
+
+        Console.WriteLine($"What is {numberOne} / {numberTwo}?");
+        question = $"What is {numberOne} / {numberTwo}?";
+        answer = numberOne / numberTwo;
+        return question;
+    }
 
 
