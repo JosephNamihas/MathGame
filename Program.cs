@@ -1,8 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 Random rnd = new Random();
-int numberOne;
-int numberTwo;
+int numberOne = 0;
+int numberTwo = 0;
 int score = 0;
 List <string> questionList = new List <string>();
 string question = "";
@@ -40,7 +40,7 @@ bool IsValidOperation(string? choice)
     }
 }
 
-string StartQuiz() {
+string StartQuiz() {+
     do
 {
     Console.WriteLine("Enter a mathematical operation (+, -, *, /):");
@@ -54,11 +54,11 @@ return operationChoice; // while isValidOperation return false, keep running isV
 
 string GenerateQuestion(string operation) {
 
-    numberOne = rnd.Next(0, 12);
-    numberTwo = rnd.Next(0, 12);
     switch (operation)
     {
         case "+":
+            numberOne = rnd.Next(0, 99);
+            numberTwo = rnd.Next(0, 99);
             Console.WriteLine("You chose addition.");
             Console.WriteLine($"What is {numberOne} + {numberTwo}");
             question = $"What is {numberOne} + {numberTwo}?";
@@ -67,6 +67,8 @@ string GenerateQuestion(string operation) {
             return question;
 
         case "-":
+            numberOne = rnd.Next(0, 99);
+            numberTwo = rnd.Next(0, 99);
             Console.WriteLine("You chose subtraction.");
             Console.WriteLine($"What is {numberOne} - {numberTwo}?");
             question = $"What is {numberOne} - {numberTwo}?";
@@ -74,6 +76,8 @@ string GenerateQuestion(string operation) {
             return question;
 
         case "*":
+            numberOne = rnd.Next(0, 12);
+            numberTwo = rnd.Next(0, 12);
             Console.WriteLine("You chose multiplication.");
             Console.WriteLine($"What is {numberOne} * {numberTwo}?");
             question = $"What is {numberOne} * {numberTwo}?";
@@ -105,6 +109,7 @@ bool CompareAnswers(double answer) {
 
 void ViewQuestionList() {
     Console.WriteLine("Press q to view the question list, otherwise any other key to continue");
+    Console.WriteLine("Press e to exit the application");
     string? viewQuestions = Console.ReadLine();
 
     /*if(string.IsNullOrWhiteSpace(viewQuestions)) {
@@ -112,6 +117,8 @@ void ViewQuestionList() {
     }*/
 
     viewQuestions.ToLower();
+
+    // if viewQuestions == e, exit game
 
     if (viewQuestions == "q") {
         QuestionList();
