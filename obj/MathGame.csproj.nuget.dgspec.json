@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\MathGame.csproj": {}
+    "C:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\MathGame.csproj": {}
   },
   "projects": {
-    "c:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\MathGame.csproj": {
+    "C:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\MathGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\MathGame.csproj",
+        "projectUniqueName": "C:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\MathGame.csproj",
         "projectName": "MathGame",
-        "projectPath": "c:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\MathGame.csproj",
+        "projectPath": "C:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\MathGame.csproj",
         "packagesPath": "C:\\Users\\josep\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\obj\\",
+        "outputPath": "C:\\Users\\josep\\Desktop\\Coding\\C#\\C# Academy\\1. Math Game\\MathGame\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
