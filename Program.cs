@@ -40,7 +40,7 @@ bool IsValidOperation(string? choice)
     }
 }
 
-string StartQuiz() {+
+string StartQuiz() {
     do
 {
     Console.WriteLine("Enter a mathematical operation (+, -, *, /):");
