@@ -27,3 +27,4 @@ c:\VSProjects\Math-Game\MathGame\obj\Debug\net8.0\refint\MathGame.dll
 c:\VSProjects\Math-Game\MathGame\obj\Debug\net8.0\MathGame.pdb
 c:\VSProjects\Math-Game\MathGame\obj\Debug\net8.0\MathGame.genruntimeconfig.cache
 c:\VSProjects\Math-Game\MathGame\obj\Debug\net8.0\ref\MathGame.dll
+c:\Users\josep\Desktop\Coding\C#\C# Academy\1. Math Game\MathGame\obj\Debug\net8.0\MathGame.sourcelink.json

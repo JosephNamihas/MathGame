@@ -7,6 +7,9 @@ int score = 0;
 
 List<string> questionList = new List<string>();
 List<double> answerList = new List<double>();
+
+Dictionary<string, double> pastQuestions = new Dictionary<string, double>();
+
 string question = "";
 double answer = 0;
 
@@ -102,8 +105,7 @@ bool CompareAnswers(double answer) {
 
     if(answer == playerAnswer) {
         score += 1;
-        questionList.Add(question);
-        answerList.Add(playerAnswer);
+        pastQuestions.Add(question, answer);
         return true;
     } else {
         return false;
@@ -121,7 +123,11 @@ void ViewQuestionList() {
 
     viewQuestions.ToLower();
 
-    // if viewQuestions == e, exit game
+    if (viewQuestions == "e")
+    {
+        Environment.Exit(0);
+
+    }
 
     if (viewQuestions == "q") {
         QuestionList();
@@ -138,14 +144,9 @@ void QuestionList()
 
     Console.WriteLine("Previous Questions: ");
 
-    foreach (string item in questionList)
+    foreach (KeyValuePair<string, double> entry in pastQuestions)
     {
-        Console.WriteLine($"{item}");
-    }
-
-    foreach (double answer in answerList)
-    {
-        Console.WriteLine($"{answer}\n");
+        Console.WriteLine($"Question: {entry.Key}\t Answer: {entry.Value}");
     }
 }
 
