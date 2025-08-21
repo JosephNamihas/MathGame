@@ -4,7 +4,9 @@ Random rnd = new Random();
 int numberOne = 0;
 int numberTwo = 0;
 int score = 0;
-List <string> questionList = new List <string>();
+
+List<string> questionList = new List<string>();
+List<double> answerList = new List<double>();
 string question = "";
 double answer = 0;
 
@@ -101,6 +103,7 @@ bool CompareAnswers(double answer) {
     if(answer == playerAnswer) {
         score += 1;
         questionList.Add(question);
+        answerList.Add(playerAnswer);
         return true;
     } else {
         return false;
@@ -130,19 +133,26 @@ void ViewQuestionList() {
     }
 }
 
-void QuestionList() {
+void QuestionList()
+{
 
     Console.WriteLine("Previous Questions: ");
 
-    foreach(string item in questionList) {
-        Console.WriteLine($"{item}\n");
+    foreach (string item in questionList)
+    {
+        Console.WriteLine($"{item}");
+    }
+
+    foreach (double answer in answerList)
+    {
+        Console.WriteLine($"{answer}\n");
     }
 }
 
 string DivisionLogic(int numberOne, int numberTwo) {
 
     do {
-        numberOne = rnd.Next(1, 12);
+        numberOne = rnd.Next(1, 99);
         numberTwo = rnd.Next(1, 12);
 
     } while (numberOne % numberTwo != 0); 
