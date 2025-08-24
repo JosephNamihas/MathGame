@@ -31,3 +31,7 @@
 <p> When to use methods. Can you overdo it with methods? Generally, the DRY principle is followed, by I felt like I made the code more complicated and harder to read by adding additional methods. My switch-case statement was originally bloated from methods (validation mainly). I took them out an decided to use the switch-case to hold more of the logic
 
 <p> I also went ahead and added the random game option. The decision making possibilites of the program then spiralled a bit out of control and I felt it was a bit messy. Highlighted the importance of modular code that can scale up.+
+
+<p> Don't use Globals. Professionals would encapsulate core program flow in a class (scores, numbers, randoms etc)
+
+<p> Look into Recursion vs Iteration. 

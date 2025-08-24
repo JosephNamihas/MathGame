@@ -5,9 +5,6 @@ int numberOne = 0;
 int numberTwo = 0;
 int score = 0;
 
-List<string> questionList = new List<string>();
-List<double> answerList = new List<double>();
-
 Dictionary<string, double> pastQuestions = new Dictionary<string, double>();
 
 string question = "";
